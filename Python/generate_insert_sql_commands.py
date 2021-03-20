@@ -25,6 +25,13 @@ ths outpute file generate will contain this:
 
 NB: this script can be easily modified to work with csv files
 
+
+
+#TODO : check for empty data files to avoid generating an empty output
+		convert into bash
+		modify to work with csv files
+		Look at how to incorporate os.path.exists()
+
 """
 
 file_path = input("file path: ")
