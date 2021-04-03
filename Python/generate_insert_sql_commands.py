@@ -72,3 +72,31 @@ data = getData()
 
 if data != None:
 	sqlise(data)
+	
+def insert_from_csv(filename):
+	import pandas as pd
+	import pymysql as pql
+
+	#Reads the csv file
+	data = pd.read_csv(filename)
+
+	#Creates the connection to the database
+	connection = pql.connect(host="hostname", user="username", password="kontomire", db="databasename")
+
+	#Object to execute queries
+	mc = connection.cursor()
+
+	#Insert query
+	query = "insert into record(name, age, height) value (%s, %s, %s)"
+
+	#Per the data from the csv file inserts the data{Eg data for columns name, age, height}
+	for i in range(len(data['name'])):
+	    name = data['name'][i]
+	    age = data['age'][i]
+	    height = data['height'][i]
+	    mc.execute(query,(name,age,height))
+
+	print("Insertion complete")
+
+	connection.commit() #commits just like git
+	connection.close()
