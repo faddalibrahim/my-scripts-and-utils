@@ -59,3 +59,10 @@ You must pass the config file as an argument like so
 ```py
 python create.py config.json
 ```
+
+## Miscillaneous
+
+seen a bug?
+wanna improve it?
+
+create an issue or pull request 🚀
