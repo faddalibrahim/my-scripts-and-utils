@@ -2,17 +2,15 @@
 
 This python script creates javascript files with basic boilerplate for a react functional component in their respective folders.
 
-You need a
-
-1. a config file with 2 properties
+You need a json file with 2 properties
 
 **folder**  
 this is the folder that will contain the components
 
 **components**  
-the components to be created in the folder. Each component will be created within a sub-folder with the same name
+an array of components to be created in the folder. Each component will be created within a sub-folder with the same name
 
-> Example
+## Example
 
 **config.json**
 
@@ -23,19 +21,17 @@ the components to be created in the folder. Each component will be created withi
 }
 ```
 
-The above implies that you want to create a folder called **pages** with 3 sub-folders **( login, register, home )** each containing a react component with the same name **( Login.js, Register.js, Home.js )**
+The above configuration implies that you want to create a folder called **pages** with 3 sub-folders **( login, register, home )** each containing a react component with the same name **( Login.js, Register.js, Home.js )**
 
 The eventual folder struture would look like this
 
-```py
-- pages/
-  - login/
-    - Login.js
-  - register/
-    - Register.js
-  - home/
-    - Home.js
-```
+> - pages/
+>   - login/
+>     - Login.js
+>   - register/
+>     - Register.js
+>   - home/
+>     - Home.js
 
 and each javascript file will contain
 
