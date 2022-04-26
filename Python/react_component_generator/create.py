@@ -6,12 +6,14 @@ import sys
 
 config = sys.argv[-1]
 
+# load json content from config file
 def load_json():
     with open(config) as components:
         return json.load(components)
 
 json = load_json()
 
+# helper function for creating folders
 def create_folder(folder_name,prev = None):
     if prev is None:
         new_folder_path = os.path.join(os.getcwd(),folder_name)
@@ -23,7 +25,7 @@ def create_folder(folder_name,prev = None):
     if not os.path.exists(new_folder_pathh):
         os.mkdir(new_folder_pathh)
 
-# create folders
+# create all the respective subfolders folders specified for each component
 def create_directories():
     parent = create_folder(json['path'])
     for component in json['components']:
@@ -52,7 +54,8 @@ const {} = () => {{
 export default {};"""
 
 
-# create javascript files
+# create javascript files in respective folders
+# fill each file with code template
 def create_js():
     for component in json['components']:
         filename = component.capitalize() + ".js"
