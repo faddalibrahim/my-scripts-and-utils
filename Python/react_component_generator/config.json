@@ -1,0 +1,4 @@
+{
+  "path": "components",
+  "components": ["home", "about", "contact"]
+}
