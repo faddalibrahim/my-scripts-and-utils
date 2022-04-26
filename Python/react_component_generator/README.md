@@ -54,6 +54,8 @@ export default ComponentName;
 
 ## Running the script
 
+You must pass the config file as an argument like so
+
 ```py
 python create.py config.json
 ```
